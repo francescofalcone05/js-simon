@@ -5,7 +5,11 @@
     padding: 0;
 }
 
-
+body{
+    background-color: rgb(53, 53, 53);
+    padding: 1rem;
+    text-align: center;
+}
 
 
 /************* HEADER *************/
@@ -16,7 +20,16 @@
 
 /************* MAIN *************/
 
+#btn{
+    padding: 1rem;
+    margin: 1rem;
+    background-color: rgb(228, 228, 183);
+}
 
+li{
+    font-size: 1.5rem;
+    color: green;
+}
 
 
 
