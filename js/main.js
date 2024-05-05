@@ -2,6 +2,7 @@ const start = document.getElementById('btn')
 const contenitoreLista = document.getElementById('lista')
 let randomNumbers = [];
 let userNumbers = [];
+let winnerNumbers = [];
 
 
 
@@ -83,12 +84,32 @@ function askFiveNumber() {
         numero = parseInt(prompt('Inserisci ad uno alla volta i numeri visti prima'))
 
         //inserisco ogni numero in array se...
-        if (!userNumbers.includes(numero) && (!numero == NaN) && (!numero == 0)) {
+        if ((!userNumbers.includes(numero)) && (!numero == 0)) {
             userNumbers.push(numero)
+            if(randomNumbers.includes(numero)){
+                winnerNumbers.push(numero)
+            }
 
         } else {
             alert('Numero gia` inserito o non valido')
         }
+    }
+
+    printWinnerNumbers();
+
+}
+
+
+//creo una funzione che stampa i numeri vincenti in pagina
+function printWinnerNumbers (){
+
+    contenitoreLista.innerHTML += `<li>I numeri vincenti sono:</li>`
+ 
+    for (let x = 0; x < winnerNumbers.length; x++){
+
+        vincente = winnerNumbers[x]
+        contenitoreLista.innerHTML += `<li>${vincente}</li>`
+
     }
 
 }
