@@ -8,30 +8,17 @@ let winnerNumbers = [];
 
 start.addEventListener('click', function () {
 
+    userNumbers = [];
+    winnerNumbers = [];
     randomNumbers = [];
     contenitoreLista.innerHTML = '';
 
     //creo array con 5 numeri random e stampo in pagina
     createArrayRandom();
-    //svuoto la pagina e chiedo i 5 numeri all'utente
+    //svuoto la pagina, chiedo i 5 numeri all'utente, li confronto e stampo quelli azzeccati
     setTimeout(emptyContainer, 10 * 1000);
 
-
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -86,7 +73,7 @@ function askFiveNumber() {
         //inserisco ogni numero in array se...
         if ((!userNumbers.includes(numero)) && (!numero == 0)) {
             userNumbers.push(numero)
-            if(randomNumbers.includes(numero)){
+            if (randomNumbers.includes(numero)) {
                 winnerNumbers.push(numero)
             }
 
@@ -101,11 +88,11 @@ function askFiveNumber() {
 
 
 //creo una funzione che stampa i numeri vincenti in pagina
-function printWinnerNumbers (){
+function printWinnerNumbers() {
 
-    contenitoreLista.innerHTML += `<li>I numeri vincenti sono:</li>`
- 
-    for (let x = 0; x < winnerNumbers.length; x++){
+    contenitoreLista.innerHTML += `<li>I numeri vincenti sono ${winnerNumbers.length}:</li>`
+
+    for (let x = 0; x < winnerNumbers.length; x++) {
 
         vincente = winnerNumbers[x]
         contenitoreLista.innerHTML += `<li>${vincente}</li>`
